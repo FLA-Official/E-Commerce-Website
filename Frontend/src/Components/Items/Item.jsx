@@ -20,6 +20,7 @@ import { Link } from 'react-router-dom'
   )
 }
 Item.propTypes = {
+  id: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired, 
   new_price: PropTypes.number.isRequired,
