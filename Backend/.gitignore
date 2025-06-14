@@ -35,7 +35,7 @@ dist/
 build/
 
 # Uploads (if using Multer)
-uploads/
+upload/
 
 # Database files (if using local DB)
 *.sqlite
@@ -43,3 +43,4 @@ uploads/
 *.sqlite-shm
 dump.rdb
 *.pid
+.env
