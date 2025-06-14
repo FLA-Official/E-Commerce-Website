@@ -2,7 +2,6 @@ const port = 4000;
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require("path"); // to get backend directory in this app
@@ -15,13 +14,9 @@ app.use(cors());
 
 //Database Connection With MongoDB
 
-require('dotenv').config();
+require('dotenv').config(); // providing credentials through .env file security purpose
 const mongoose = require('mongoose');
-
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(process.env.MONGODB_URI);
 
 //API Creation
 
@@ -135,7 +130,7 @@ app.post("/addproduct", async (req, res) => {
 });
 
 //API for deleting product
-// By providing ID, the product will be removed from dataabse
+// By providing ID, the product will be removed from database
 app.post("/removeproduct", async (req, res) => {
   await Product.findOneAndDelete({ id: req.body.id });
   console.log("removed");
