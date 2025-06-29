@@ -43,4 +43,4 @@ upload/
 *.sqlite-shm
 dump.rdb
 *.pid
-.env
+
